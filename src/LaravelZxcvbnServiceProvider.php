@@ -17,9 +17,6 @@ class LaravelZxcvbnServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-zxcvbn')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-zxcvbn_table')
-            ->hasCommand(LaravelZxcvbnCommand::class);
+            ->hasConfigFile();
     }
 }
