@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Ziming\LaravelZxcvbn\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelZxcvbnCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-zxcvbn';
 
     public $description = 'My command';
 
