@@ -1,6 +1,3 @@
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
 # Zxcvbn Password validation rule for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ziming/laravel-zxcvbn.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-zxcvbn)
@@ -8,15 +5,11 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ziming/laravel-zxcvbn/Check%20&%20fix%20styling?label=code%20style)](https://github.com/ziming/laravel-zxcvbn/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ziming/laravel-zxcvbn.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-zxcvbn)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Laravel Zxcvbn Password Validation Rule. Nothing more, nothing less.
 
-## Support us
+For an introdution to Zxcvbn, see the following link
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-zxcvbn.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-zxcvbn)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+https://dropbox.tech/security/zxcvbn-realistic-password-strength-estimation
 
 ## Installation
 
@@ -26,37 +19,53 @@ You can install the package via composer:
 composer require ziming/laravel-zxcvbn
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-zxcvbn-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="laravel-zxcvbn-config"
 ```
 
-This is the contents of the published config file:
+This is the contents of the published config file. The default min score is set to 3.
 
 ```php
+<?php
+
 return [
+    'min_score' => env('ZXCVBN_MIN_SCORE', 3),
 ];
 ```
 
-Optionally, you can publish the views using
+[bjeavons/zxcvbn-php](https://github.com/bjeavons/zxcvbn-php) provides a good overview on the zxcvbn score.
 
-```bash
-php artisan vendor:publish --tag="laravel-zxcvbn-views"
-```
+    Scores are integers from 0 to 4:
+
+    - 0 means the password is extremely guessable (within 10^3 guesses), dictionary words like 'password' or 'mother' score a 0
+    - 1 is still very guessable (guesses < 10^6), an extra character on a dictionary word can score a 1
+    - 2 is somewhat guessable (guesses < 10^8), provides some protection from unthrottled online attacks
+    - 3 is safely unguessable (guesses < 10^10), offers moderate protection from offline slow-hash scenario
+    - 4 is very unguessable (guesses >= 10^10) and provides strong protection from offline slow-hash scenario
 
 ## Usage
 
+Note that the argument `$userInputs` is optional
 ```php
-$laravelZxcvbn = new Ziming\LaravelZxcvbn();
-echo $laravelZxcvbn->echoPhrase('Hello, Ziming!');
+// In your validation rules
+use Illuminate\Validation\Rules\Password;
+use Ziming\LaravelZxcvbn\Rules\ZxcvbnRule;
+
+[
+    'name' => ['required']
+    'email' => ['required', 'email'],
+    'password' => [
+        'required', 
+        'confirmed', 
+        'min:8',
+        new ZxcvbnRule(userInputs: [
+            request('email'),
+            request('name'),
+        ]),
+    ],
+]
 ```
 
 ## Testing

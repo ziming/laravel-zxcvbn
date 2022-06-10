@@ -36,8 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ziming\\LaravelZxcvbn\\": "src",
-            "Ziming\\LaravelZxcvbn\\Database\\Factories\\": "database/factories"
+            "Ziming\\LaravelZxcvbn\\": "src"
         }
     },
     "autoload-dev": {
@@ -62,10 +61,7 @@
         "laravel": {
             "providers": [
                 "Ziming\\LaravelZxcvbn\\LaravelZxcvbnServiceProvider"
-            ],
-            "aliases": {
-                "LaravelZxcvbn": "Ziming\\LaravelZxcvbn\\Facades\\LaravelZxcvbn"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
