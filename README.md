@@ -25,13 +25,13 @@ You can publish the config file with:
 php artisan vendor:publish --tag="laravel-zxcvbn-config"
 ```
 
-This is the contents of the published config file. The default min score is set to 3.
+This is the contents of the published config file. The default min score is set to 4.
 
 ```php
 <?php
 
 return [
-    'min_score' => env('ZXCVBN_MIN_SCORE', 3),
+    'min_score' => env('ZXCVBN_MIN_SCORE', 4),
 ];
 ```
 
