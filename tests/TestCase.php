@@ -2,7 +2,6 @@
 
 namespace Ziming\LaravelZxcvbn\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Ziming\LaravelZxcvbn\LaravelZxcvbnServiceProvider;
 

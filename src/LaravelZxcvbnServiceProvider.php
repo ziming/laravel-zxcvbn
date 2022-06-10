@@ -4,7 +4,6 @@ namespace Ziming\LaravelZxcvbn;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Ziming\LaravelZxcvbn\Commands\LaravelZxcvbnCommand;
 
 class LaravelZxcvbnServiceProvider extends PackageServiceProvider
 {
