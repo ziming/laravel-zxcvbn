@@ -24,6 +24,7 @@ class ZxcvbnRule implements Rule
 
     public function message()
     {
+        // add translations in the future
         return 'The :attribute must be stronger.';
     }
 }
