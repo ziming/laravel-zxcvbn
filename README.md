@@ -60,7 +60,7 @@ use Ziming\LaravelZxcvbn\Rules\ZxcvbnRule;
         'required', 
         'confirmed', 
         'min:8',
-        new ZxcvbnRule(userInputs: [
+        new ZxcvbnRule([
             request('email'),
             request('name'),
         ]),
