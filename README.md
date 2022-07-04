@@ -22,7 +22,7 @@ composer require ziming/laravel-zxcvbn
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-zxcvbn-config"
+php artisan vendor:publish --tag="zxcvbn-config"
 ```
 
 This is the contents of the published config file. The default min score is set to 4.
