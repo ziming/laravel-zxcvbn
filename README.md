@@ -47,7 +47,6 @@ return [
 
 ## Usage
 
-Note that the argument `$userInputs` is optional
 ```php
 // In your validation rules
 use Illuminate\Validation\Rules\Password;
