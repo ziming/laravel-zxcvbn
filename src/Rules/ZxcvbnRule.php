@@ -13,7 +13,7 @@ class ZxcvbnRule implements Rule
     public function __construct(private readonly array $userInputs = [])
     {
         $this->zxcvbn = new Zxcvbn();
-        $this->minZxcvbnScore = config('zxcvbn.min_score') ?? 4;
+        $this->minZxcvbnScore = config('zxcvbn.min_score');
     }
 
     public function passes($attribute, $value)
