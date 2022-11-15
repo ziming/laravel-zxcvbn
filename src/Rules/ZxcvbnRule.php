@@ -4,7 +4,6 @@ namespace Ziming\LaravelZxcvbn\Rules;
 
 use Illuminate\Contracts\Validation\InvokableRule;
 use ZxcvbnPhp\Zxcvbn;
-use Closure;
 
 class ZxcvbnRule implements InvokableRule
 {
