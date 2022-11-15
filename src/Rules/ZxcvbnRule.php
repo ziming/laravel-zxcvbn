@@ -2,10 +2,11 @@
 
 namespace Ziming\LaravelZxcvbn\Rules;
 
-use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Contracts\Validation\InvokableRule;
 use ZxcvbnPhp\Zxcvbn;
+use Closure;
 
-class ZxcvbnRule implements Rule
+class ZxcvbnRule implements InvokableRule
 {
     private readonly Zxcvbn $zxcvbn;
     private readonly int $minZxcvbnScore;
@@ -16,15 +17,18 @@ class ZxcvbnRule implements Rule
         $this->minZxcvbnScore = config('zxcvbn.min_score');
     }
 
-    public function passes($attribute, $value)
+    /**
+     * Run the validation rule.
+     *
+     * @param  string  $attribute
+     * @param  mixed  $value
+     * @param  \Closure  $fail
+     * @return void
+     */
+    public function __invoke($attribute, mixed $value, $fail): void
     {
-        return $this->zxcvbn
-                ->passwordStrength($value, $this->userInputs)['score'] >= $this->minZxcvbnScore;
-    }
-
-    public function message()
-    {
-        // add translations in the future
-        return 'The :attribute must be stronger.';
+        if ($this->zxcvbn->passwordStrength($value, $this->userInputs)['score'] < $this->minZxcvbnScore) {
+            $fail('The :attribute must be stronger.');
+        }
     }
 }
