@@ -10,10 +10,10 @@ class ZxcvbnRule implements InvokableRule
     private readonly Zxcvbn $zxcvbn;
     private readonly int $minZxcvbnScore;
 
-    public function __construct(private readonly array $userInputs = [])
+    public function __construct(private readonly array $userInputs = [], int $minZxcvbnScore = -1)
     {
         $this->zxcvbn = new Zxcvbn();
-        $this->minZxcvbnScore = config('zxcvbn.min_score');
+        $this->minZxcvbnScore = ($minZxcvbnScore > -1) ? $minZxcvbnScore : config('zxcvbn.min_score');
     }
 
     /**
