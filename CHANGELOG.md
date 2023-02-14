@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-zxcvbn` will be documented in this file.
 
+## Fix Laravel 10 Support, Drop Laravel 9 - 2023-02-14
+
+- Fix Laravel 10 Support
+- Drop Laravel 9
+- Use the new Str::password() function in tests :)
+
 ## Laravel 10 Support, allow overriding config file min score - 2023-02-11
 
 - Laravel 10 support
