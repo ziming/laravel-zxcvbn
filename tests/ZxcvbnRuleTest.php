@@ -17,7 +17,7 @@ it('fails with weak passwords', function () {
 
 it('passes with strong passwords', function () {
     // possible to generate a weak one by chance but it should be very rare
-    $strongPassword = Str::random();
+    $strongPassword = Str::password();
 
     $validator = Validator::make(['password' => $strongPassword], [
         'password' => ['required', new ZxcvbnRule([], 4)],
