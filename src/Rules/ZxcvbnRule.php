@@ -25,7 +25,7 @@ class ZxcvbnRule implements ValidationRule
      * @param  \Closure  $fail
      * @return void
      */
-    public function validate(string $attribute, mixed $value, Closure $fail): void
+    public function validate(string $attribute,#[\SensitiveParameter] mixed $value, Closure $fail): void
     {
         if ($this->zxcvbn->passwordStrength($value, $this->userInputs)['score'] < $this->minZxcvbnScore) {
             $fail('The :attribute must be stronger.');
