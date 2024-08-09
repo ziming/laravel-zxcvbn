@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-zxcvbn` will be documented in this file.
 
+## Add indonesia translation - 2024-08-09
+
+### What's Changed
+
+* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/ziming/laravel-zxcvbn/pull/11
+* id translation by @stephanus-tantiono in https://github.com/ziming/laravel-zxcvbn/pull/13
+
+**Full Changelog**: https://github.com/ziming/laravel-zxcvbn/compare/2.1.1...2.2
+
 ## Fix Laravel 10 Support, Drop Laravel 9 - 2023-02-14
 
 - Fix Laravel 10 Support
