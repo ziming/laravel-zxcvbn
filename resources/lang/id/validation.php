@@ -1,6 +1,5 @@
 <?php
 
 return [
-    'password' => 'Kata sandi terlalu lemah.',
-    'strong_password' => 'Kata sandi :attribute harus lebih kuat.',
+    'The :attribute must be stronger.' => 'Kata sandi :attribute harus lebih kuat.',
 ];
