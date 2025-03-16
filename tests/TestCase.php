@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ziming\LaravelZxcvbn\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -12,20 +14,10 @@ class TestCase extends Orchestra
         parent::setUp();
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             LaravelZxcvbnServiceProvider::class,
         ];
-    }
-
-    public function getEnvironmentSetUp($app)
-    {
-        config()->set('database.default', 'testing');
-
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_laravel-zxcvbn_table.php.stub';
-        $migration->up();
-        */
     }
 }
