@@ -16,7 +16,7 @@ class ZxcvbnRule implements ValidationRule
     public function __construct(private readonly array $userInputs = [], int $minZxcvbnScore = -1)
     {
         $this->zxcvbn = new Zxcvbn();
-        $this->minZxcvbnScore = ($minZxcvbnScore > -1) ? $minZxcvbnScore : config()->integer('zxcvbn.min_score');
+        $this->minZxcvbnScore = ($minZxcvbnScore > -1) ? $minZxcvbnScore : config('zxcvbn.min_score');
     }
 
     /**
