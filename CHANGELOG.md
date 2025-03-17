@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-zxcvbn` will be documented in this file.
 
+## Remove some strict types temporarily - 2025-03-17
+
+Remove some strict types temporarily as it causes some issues. More details later
+
 ## Add indonesia translation - 2024-08-09
 
 ### What's Changed
