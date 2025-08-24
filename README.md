@@ -7,7 +7,7 @@
 
 Laravel Zxcvbn Password Validation Rule. Nothing more, nothing less.
 
-For an introdution to Zxcvbn, see the following link
+For an introduction to [Dropbox](https://www.dropbox.com/referrals/AADDLjGkSH_QFLodOUiOnU4tiqigvGZmLR0?src=global9) Zxcvbn, see the following link
 
 https://dropbox.tech/security/zxcvbn-realistic-password-strength-estimation
 
