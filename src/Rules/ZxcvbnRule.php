@@ -1,19 +1,17 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Ziming\LaravelZxcvbn\Rules;
 
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 use ZxcvbnPhp\Zxcvbn;
 
-class ZxcvbnRule implements ValidationRule
+readonly class ZxcvbnRule implements ValidationRule
 {
-    private readonly Zxcvbn $zxcvbn;
-    private readonly int $minZxcvbnScore;
+    private Zxcvbn $zxcvbn;
+    private int $minZxcvbnScore;
 
-    public function __construct(private readonly array $userInputs = [], int $minZxcvbnScore = -1)
+    public function __construct(private array $userInputs = [], int $minZxcvbnScore = -1)
     {
         $this->zxcvbn = new Zxcvbn();
         $this->minZxcvbnScore = ($minZxcvbnScore > -1) ? $minZxcvbnScore : config()->integer('zxcvbn.min_score');
