@@ -6,6 +6,9 @@ parameters:
     paths:
         - src
         - config
+    ignoreErrors:
+        - message: "#^Called 'env' outside of the config directory which returns null when the config is cached, use 'config'.$#"
+          path: *config/*.php
     tmpDir: build/phpstan
     checkOctaneCompatibility: true
     checkModelProperties: true
