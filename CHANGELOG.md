@@ -2,6 +2,20 @@
 
 All notable changes to `laravel-zxcvbn` will be documented in this file.
 
+## Fix Tests - 2025-10-04
+
+### What's Changed
+
+* fix phpstan running by @ziming in https://github.com/ziming/laravel-zxcvbn/pull/20
+* Fix Tests unable to run by @ziming in https://github.com/ziming/laravel-zxcvbn/pull/21
+* fix phpstan env outside config error by @ziming in https://github.com/ziming/laravel-zxcvbn/pull/22
+
+### New Contributors
+
+* @ziming made their first contribution in https://github.com/ziming/laravel-zxcvbn/pull/20
+
+**Full Changelog**: https://github.com/ziming/laravel-zxcvbn/compare/2.3.5...2.3.6
+
 ## Remove some strict types temporarily - 2025-03-17
 
 Remove some strict types temporarily as it causes some issues. More details later
