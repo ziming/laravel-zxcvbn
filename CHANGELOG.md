@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-zxcvbn` will be documented in this file.
 
+## Laravel 13 Support - 2026-03-17
+
+### What's Changed
+
+* Add support for Laravel 13
+* Add support for PHP 8.3 and 8.4
+* Update dev dependencies to support Laravel 13 (Orchestra Testbench 11, Pest 5, Collision 9)
+* Add Laravel 13 to CI test matrix
+
 ## Fix Tests - 2025-10-04
 
 ### What's Changed
